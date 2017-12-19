@@ -135,8 +135,8 @@
     from: 'off'
   condition:
     condition: time
-      after: '23:30:00'
-      before: '06:29:00'
+    after: '23:30:00'
+    before: '06:29:00'
   action:
     - service: scene.turn_on
       entity_id: scene.gang_nacht
@@ -165,8 +165,8 @@
     from: 'off'
   condition:
     condition: time
-      after: '06:30:00'
-      before: '23:29:00'
+    after: '06:30:00'
+    before: '23:29:00'
   action:
     - service: scene.turn_on
       entity_id: scene.overloop
