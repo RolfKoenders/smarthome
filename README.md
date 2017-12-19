@@ -1,5 +1,5 @@
 
-# :home: Home Assistant configuration
+# :house: Home Assistant configuration
 
 My [Home Assistant](https://home-assistant.io/) configuration (yaml) files.
 
