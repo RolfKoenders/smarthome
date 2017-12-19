@@ -18,9 +18,6 @@ map:
 sun:
 updater:
 
-sensor:
-  - platform: yr
-
 tts:
   - platform: google
 
