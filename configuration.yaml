@@ -1,0 +1,87 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_location_lat 
+  longitude: !secret home_location_lon
+  elevation: 0
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+  customize: !include customize.yaml
+
+frontend:
+config:
+http:
+  api_password: !secret http_api_password
+discovery:
+history:
+logbook:
+map:
+sun:
+updater:
+
+sensor:
+  - platform: yr
+
+tts:
+  - platform: google
+
+mqtt:
+  broker: !secret mqtt_host
+  port: 1883
+  client_id: home-assistant
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+xiaomi_aqara:
+  gateways:
+    - key: !secret xiaomi_aqara_gateweay_key
+
+light:
+  - platform: yeelight
+    devices:
+      192.168.2.129:
+        name: Lamp 1
+      192.168.2.131:
+        name: Lamp 2
+      192.168.2.130:
+        name: Lamp 3
+  - platform: hue
+    host: !secret hue_bridge_ip
+
+media_player:
+  - platform: cast
+  - platform: plex
+    scan_interval: 3
+
+device_tracker:
+  - platform: owntracks_http
+    max_gps_accuracy: 50
+
+toon:
+  username: !secret eneco_username
+  password: !secret eneco_password
+
+emulated_hue:
+  type: alexa
+  host_ip: !secret emulated_hue_ip
+  listen_port: !secret emulated_hue_port
+  expose_by_default: False
+  exposed_domains:
+    - light
+    - scene
+    - switch
+  off_maps_to_on_domains:
+    - scene
+    - switch
+
+notify:
+  - name: pushover
+    platform: pushover
+    api_key: !secret pushover_api_key
+    user_key: !secret pushover_user_key
+
+switch: !include switches.yaml
+scene: !include scenes.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+shell_command: !include shell_commands.yaml
+zone: !include zones.yaml

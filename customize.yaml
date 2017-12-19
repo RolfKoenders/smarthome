@@ -1,0 +1,90 @@
+# Groups
+group.all_automations:
+  hidden: False
+group.all_scripts:
+  hidden: False
+group.all_scenes:
+  hidden: False
+group.all_lights:
+  hidden: True
+
+# Switches
+switch.plug_158d0001715f48:
+  friendly_name: Kerstboom
+  emulated_hue: true
+  emulated_hue_name: 'Christmas tree'
+
+switch.rolfcomputer:
+  friendly_name: 'Rolf computer'
+  emulated_hue: true
+  emulated_hue_name: 'computer'
+
+# Sensors
+light.gateway_light_34ce00853daa:
+  friendly_name: Gateway Light
+binary_sensor.door_window_sensor_158d000183ff71:
+  friendly_name: Voordeur sensor
+binary_sensor.motion_sensor_158d00016da08b:
+  friendly_name: Hal motion
+binary_sensor.motion_sensor_158d00012299b7:
+  friendly_name: Overloop motion
+binary_sensor.switch_158d0001a2f278:
+  friendly_name: Knop woonkamer
+sensor.illumination_34ce00853daa:
+  friendly_name: Lumen
+
+# Lights
+light.lamp_1:
+  friendly_name: Eettafel 1
+light.lamp_3:
+  friendly_name: Eettafel 2
+light.lamp_2:
+  friendly_name: Hal
+  emulated_hue: true
+  emulated_hue_name: 'Hallway'
+light.overloop:
+  friendly_name: Overloop
+  emulated_hue: true
+  emulated_hue_name: 'Upstairs hallway'
+light.gang:
+  friendly_name: Keuken
+  emulated_hue: true
+  emulated_hue_name: 'Kitchen light'
+light.eettafel:
+  friendly_name: Bank
+  emulated_hue: true
+  emulated_hue_name: 'Sofa light'
+
+# Scenes
+scene.living_room_on:
+  friendly_name: 'Woonkamer'
+  emulated_hue: true
+  emulated_hue_name: 'Living room'
+scene.ground_floor_off:
+  friendly_name: 'Lampen beneden uit'
+  emulated_hue: true
+  emulated_hue_name: 'Downstairs lights'
+scene.all_off:
+  friendly_name: 'Alle lampen uit'
+  emulted_hue: true
+  emulated_hue_name: 'all the lights'
+scene.evening_plex:
+  friendly_name: 'TV / Movie / Plex'
+
+# Toon
+climate.toon_van_eneco:
+  friendly_name: Temperatuur Toon
+  icon: mdi:temperature-celsius
+sensor.power_current:
+  friendly_name: Huidige Stroom
+  icon: mdi:power
+sensor.power_today:
+  friendly_name: Totaal Stroom Vandaag
+  icon: mdi:power
+sensor.gas_current:
+  friendly_name: Huidig Gas
+  icon: mdi:gas-cylinder
+sensor.gas_today:
+  friendly_name: Totaal Gas Vandaag
+  icon: mdi:gas-cylinder
+

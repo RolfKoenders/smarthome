@@ -1,0 +1,44 @@
+# default_view:
+#   view: yes
+#   entities:
+#     - group.lampen
+#     - group.toon
+
+automations:
+  name: automations
+  view: yes
+  entities:
+    - group.all_automations
+
+toon:
+  name: 'Eneco Toon'
+  view: no
+  entities:
+    - climate.toon_van_eneco
+    - sensor.power_current
+    - sensor.power_today
+    - sensor.gas_current
+    - sensor.gas_today
+    - scene.Toon_Thuis
+    - scene.Toon_Slapen
+    - scene.Toon_Weg
+    - scene.Toon_Comfort
+
+lampen:
+  name: 'Lampen'
+  view: no
+  entities:
+    - light.gateway_light_34ce00853daa
+    - light.lamp_1
+    - light.lamp_3
+    - light.eettafel
+    - switch.plug_158d0001715f48
+    - light.keuken
+    - light.lamp_2
+    - light.overloop
+
+wol:
+  name: Wake on LAN
+  view: no
+  entities:
+    - switch.rolfcomputer
