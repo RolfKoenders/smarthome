@@ -88,3 +88,10 @@ sensor.gas_today:
   friendly_name: Totaal Gas Vandaag
   icon: mdi:gas-cylinder
 
+# APCUPSd
+sensor.ups_status:
+  friendly_name: 'Status'
+sensor.ups_battery:
+  friendly_name: 'Battery'
+sensor.ups_time_left:
+  friendly_name: 'Time Left'

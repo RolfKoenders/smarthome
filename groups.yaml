@@ -42,3 +42,11 @@ wol:
   view: no
   entities:
     - switch.rolfcomputer
+
+apcupsd:
+  name: UPS
+  view: no
+  entities:
+    - sensor.ups_status
+    - sensor.ups_battery
+    - sensor.ups_time_left

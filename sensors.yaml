@@ -1,0 +1,7 @@
+- platform: yr
+
+- platform: apcupsd
+  resources:
+    - status
+    - bcharge
+    - timeleft

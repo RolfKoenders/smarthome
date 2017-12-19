@@ -79,6 +79,11 @@ notify:
     api_key: !secret pushover_api_key
     user_key: !secret pushover_user_key
 
+apcupsd:
+  host: !secret apcupsd_nis_host
+  port: !secret apcupsd_nis_port
+
+sensor: !include sensors.yaml
 switch: !include switches.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml
