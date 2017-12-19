@@ -33,7 +33,7 @@ mqtt:
 
 xiaomi_aqara:
   gateways:
-    - key: !secret xiaomi_aqara_gateweay_key
+    - key: !secret xiaomi_aqara_gateway_key
 
 light:
   - platform: yeelight
