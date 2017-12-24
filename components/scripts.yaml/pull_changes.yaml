@@ -1,4 +1,0 @@
-pull_latest_changes:
-  alias: 'Pull latest changes'
-  sequence:
-    service: shell_command.pull_latest_changes

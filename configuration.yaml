@@ -89,8 +89,8 @@ apcupsd:
 sensor: !include_dir_merge_list components/sensors
 switch: !include_dir_merge_list components/switches
 scene: !include_dir_merge_list components/scenes
-script: !include_dir_merge_list components/scripts
-timer: !include_dir_merge_list components/timers
+script: !include components/scripts.yaml
+timer: !include components/timers.yaml
 automation: !include_dir_merge_list automations
 group: !include groups.yaml
 shell_command: !include components/shell_commands.yaml
