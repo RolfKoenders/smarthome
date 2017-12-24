@@ -6,12 +6,15 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Amsterdam
   customize: !include customize.yaml
+  packages: !include_dir_named packages
 
 frontend:
 config:
 http:
   api_password: !secret http_api_password
 discovery:
+  ignore:
+    - google_cast
 history:
 logbook:
 map:
@@ -48,6 +51,9 @@ media_player:
   - platform: cast
   - platform: plex
     scan_interval: 3
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
 
 device_tracker:
   - platform: owntracks_http
@@ -80,10 +86,12 @@ apcupsd:
   host: !secret apcupsd_nis_host
   port: !secret apcupsd_nis_port
 
-sensor: !include sensors.yaml
-switch: !include switches.yaml
-scene: !include scenes.yaml
+sensor: !include_dir_merge_list components/sensors
+switch: !include_dir_merge_list components/switches
+scene: !include_dir_merge_list components/scenes
+script: !include_dir_merge_list components/scripts
+timer: !include_dir_merge_list components/timers
+automation: !include_dir_merge_list automations
 group: !include groups.yaml
-automation: !include automations.yaml
-shell_command: !include shell_commands.yaml
-zone: !include zones.yaml
+shell_command: !include components/shell_commands.yaml
+zone: !include components/zones.yaml

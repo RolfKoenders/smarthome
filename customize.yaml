@@ -1,23 +1,30 @@
 # Groups
 group.all_automations:
-  hidden: False
+  hidden: false
 group.all_scripts:
-  hidden: False
+  hidden: false
 group.all_scenes:
-  hidden: False
+  hidden: false
 group.all_lights:
-  hidden: True
+  hidden: true
+group.all_timers:
+  hidden: true
+group.all_devices:
+  hidden: true
 
 # Switches
 switch.plug_158d0001715f48:
   friendly_name: Kerstboom
   emulated_hue: true
   emulated_hue_name: 'Christmas tree'
-
 switch.rolfcomputer:
   friendly_name: 'Rolf computer'
   emulated_hue: true
   emulated_hue_name: 'computer'
+switch.playstation4:
+  friendly_name: 'Playstation 4'
+  icon: mdi:google-controller
+
 
 # Sensors
 light.gateway_light_34ce00853daa:
@@ -32,6 +39,12 @@ binary_sensor.switch_158d0001a2f278:
   friendly_name: Knop woonkamer
 sensor.illumination_34ce00853daa:
   friendly_name: Lumen
+
+# Timers
+timer.hallway_light_timer:
+  hidden: True
+timer.upstairs_hallway_light_timer:
+  hidden: True
 
 # Lights
 light.lamp_1:
@@ -70,6 +83,16 @@ scene.all_off:
   emulated_hue_name: 'all the lights'
 scene.evening_plex:
   friendly_name: 'TV / Movie / Plex'
+scene.gang:
+  friendly_name: 'Gang'
+scene.gang_nacht:
+  friendly_name: 'Gang snachts'
+scene.overloop:
+  friendly_name: 'Overloop'
+scene.overloop_nacht:
+  friendly_name: 'Overloop snachts'
+scene.morning:
+  friendly_name: 'Ochtend'
 
 # Toon
 climate.toon_van_eneco:
@@ -95,3 +118,10 @@ sensor.ups_battery:
   friendly_name: 'Battery'
 sensor.ups_time_left:
   friendly_name: 'Time Left'
+
+# Scripts
+script.restart_hass:
+  friendly_name: 'Restart Hass'
+  icon: mdi:restart
+script.pull_latest_changes:
+  icon: mdi:github-circle

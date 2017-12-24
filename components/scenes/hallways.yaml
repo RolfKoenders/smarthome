@@ -1,0 +1,23 @@
+- name: gang_nacht
+  entities:
+    light.lamp_2:
+      state: on
+      transition: False
+      brightness: 10
+      rgb_color: [66,52,26]
+
+- name: overloop
+  entities:
+    light.overloop:
+      state: on
+      transition: True
+      brightness: 125
+      rgb_color: [255,183,123]
+      
+- name: overloop_nacht
+  entities:
+    light.overloop:
+      state: on
+      transition: False
+      brightness: 10
+      rgb_color: [66,52,26]

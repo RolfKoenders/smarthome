@@ -1,0 +1,52 @@
+#
+# Fetch Trash collecting dates from Github and fill sensor
+# with data of which container to put on the street.
+#
+
+homeassistant:
+  customize:
+    sensor.trash_today:
+      friendly_name: 'Vandaag'
+      icon: mdi:delete
+
+input_boolean:
+  notify_trash:
+    name: 'Notificaties'
+    initial: 'on'
+    icon: mdi:bell-ring
+
+sensor:
+  - platform: rest
+    resource: https://raw.githubusercontent.com/RolfKoenders/smarthome/master/data/gad-calendar.json
+    name: Trash_Today
+    scan_interval: 3600
+    value_template: >
+      {% set today = now().day ~ '/' ~ now().month ~ '/' ~ now().year %}
+      {% set containerType = value_json.days[ today ] %}
+      {% if containerType | trim != "" %}
+        {% set trash = value_json.legend[ containerType ] %}
+        {{ trash }}
+      {% else %}
+        Geen
+      {% endif %}
+
+automation:
+  - alias: 'Notify of which container will be pickedup today'
+    initial_state: true
+    hide_entity: false
+    trigger:
+      platform: time
+      at: '07:00:00'
+    condition:
+      - condition: state
+        entity_id: input_boolean.notify_trash
+        state: 'on'
+      - condition: template
+        value_template: "{{ states('sensor.trash_today') != 'Geen' }}"
+      - condition: template
+        value_template: "{{ states.sensor.trash_today.state | trim != '' }}"
+    action:
+      service: notify.pushover
+      data_template:
+        title: 'Afvalinzameling'
+        message: 'Vandaag kan de {{ states.sensor.trash_today.state }} container aan de straat.'

@@ -1,0 +1,25 @@
+- alias: 'Living room switch on'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001a2f278
+      click_type: single
+  action:
+    - service: scene.turn_on
+      entity_id: scene.living_room_on
+
+- alias: 'Living room switch off'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001a2f278
+      click_type: double
+  action:
+    - service: scene.turn_on
+      entity_id: scene.ground_floor_off

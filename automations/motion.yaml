@@ -1,0 +1,104 @@
+- alias: 'Hallway light motion'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: event
+    event_type: motion
+    event_data:
+      entity_id: binary_sensor.motion_sensor_158d00016da08b
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+      - condition: time
+        after: '06:30:00'
+        before: '23:29:59'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.lamp_2
+        rgb_color: [255,183,123]
+        brightness: 125
+        transition: True
+    - service: timer.start
+      entity_id: timer.hallway_light_timer
+
+- alias: 'Hallway light motion at night'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: event
+    event_type: motion
+    event_data:
+      entity_id: binary_sensor.motion_sensor_158d00016da08b
+  condition:
+    condition: time
+    after: '23:30:00'
+    before: '06:29:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.gang_nacht
+    - service: timer.start
+      entity_id: timer.hallway_light_timer
+
+- alias: 'Turn off hallway light after minute of no motion'
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.hallway_light_timer
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.lamp_2
+      transition: True
+
+- alias: 'Upstairs hallway light'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: event
+    event_type: motion
+    event_data:
+      entity_id: binary_sensor.motion_sensor_158d00012299b7
+  condition:
+    condition: time
+    after: '06:30:00'
+    before: '23:29:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.overloop
+    - service: timer.start
+      entity_id: timer.upstairs_hallway_light_timer
+
+- alias: 'Upstairs hallway light at night'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: event
+    event_type: motion
+    event_data:
+      entity_id: binary_sensor.motion_sensor_158d00012299b7
+  condition:
+    condition: time
+    after: '23:30:00'
+    before: '06:29:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.overloop_nacht
+    - service: timer.start
+      entity_id: timer.upstairs_hallway_light_timer
+
+- alias: 'Turn off upstairs hallway light after minute of no motion'
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.upstairs_hallway_light_timer
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.overloop
+      transition: True

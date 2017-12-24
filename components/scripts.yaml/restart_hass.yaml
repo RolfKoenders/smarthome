@@ -1,0 +1,4 @@
+restart_hass:
+  alias: 'Restart Hass'
+  sequence:
+    service: shell_command.restart_hass

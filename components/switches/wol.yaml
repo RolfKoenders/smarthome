@@ -1,0 +1,10 @@
+- platform: wake_on_lan
+  name: 'rolfcomputer'
+  mac_address: !secret rolf_computer_mac
+  host: !secret rolf_computer_ip
+  turn_off:
+    service: shell_command.turn_off_rolf_computer
+    data:
+      user: !secret rolf_computer_user
+      ip: !secret rolf_computer_ip
+      cmd: !secret rolf_computer_cmd

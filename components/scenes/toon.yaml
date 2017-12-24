@@ -1,0 +1,16 @@
+- name: Toon Comfort
+  entities:
+    climate.toon_van_eneco:
+        operation_mode: Comfort
+- name: Toon Slapen
+  entities:
+    climate.toon_van_eneco:
+        operation_mode: Sleep
+- name: Toon Thuis
+  entities:
+    climate.toon_van_eneco:
+        operation_mode: Home
+- name: Toon Weg
+  entities:
+    climate.toon_van_eneco:
+        operation_mode: Away 

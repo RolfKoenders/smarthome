@@ -1,0 +1,7 @@
+- name: morning
+  entities:
+    light.overloop:
+      state: on
+      transition: False
+      brightness: 116
+      rgb_color: [209,169,97]

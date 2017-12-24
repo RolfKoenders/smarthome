@@ -1,0 +1,13 @@
+- alias: 'When running of UPS send notification'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ups_battery
+    value_template: '{{ round(sensor.ups_battery) }}'
+    below: 60
+  action:
+    service: notify.pushover
+    data_template:
+      title: 'Power issue (UPS)'
+      message: 'UPS Battery dropped below 60%. Possibly a power outage.'

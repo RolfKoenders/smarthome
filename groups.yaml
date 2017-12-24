@@ -1,14 +1,71 @@
-# default_view:
-#   view: yes
-#   entities:
-#     - group.lampen
-#     - group.toon
+default_view:
+  view: yes
+  entities:
+    - sun.sun
+    - sensor.illumination_34ce00853daa
+    - sensor.yr_symbol
+    - binary_sensor.motion_sensor_158d00012299b7
+    - binary_sensor.motion_sensor_158d00016da08b
+    - binary_sensor.door_window_sensor_158d000183ff71
+    - group.people
+    - group.afvalinzameling
+    - group.toon
+    - group.lampen
+    - group.scenes
+    - group.wol
 
-automations:
-  name: automations
+bedroom:
+  name: bedroom
+  icon: mdi:hotel
+  view: yes
+  entities:
+    - media_player.mi_box
+    - media_player.spotify
+
+settings:
+  name: settings
+  icon: mdi:settings
   view: yes
   entities:
     - group.all_automations
+    - group.scripts
+    - group.apcupsd
+
+people:
+  name: 'Familie'
+  view: no
+  entities:
+    - device_tracker.rolf_5t
+
+afvalinzameling:
+  name: 'Afvalinzameling'
+  view: no
+  entities:
+    - input_boolean.notify_trash
+    - sensor.trash_today
+
+lampen:
+  name: 'Lampen'
+  view: no
+  entities:
+    - light.gateway_light_34ce00853daa
+    - light.lamp_1
+    - light.lamp_3
+    - light.eettafel
+    - switch.plug_158d0001715f48
+    - light.keuken
+    - light.lamp_2
+    - light.overloop
+
+scenes:
+  name: 'Scenes'
+  view: no
+  entities:
+    - scene.morning
+    - scene.living_room_on
+    - scene.evening_plex
+    - scene.ground_floor_off
+    - scene.all_off
 
 toon:
   name: 'Eneco Toon'
@@ -24,24 +81,12 @@ toon:
     - scene.Toon_Weg
     - scene.Toon_Comfort
 
-lampen:
-  name: 'Lampen'
-  view: no
-  entities:
-    - light.gateway_light_34ce00853daa
-    - light.lamp_1
-    - light.lamp_3
-    - light.eettafel
-    - switch.plug_158d0001715f48
-    - light.keuken
-    - light.lamp_2
-    - light.overloop
-
 wol:
   name: Wake on LAN
   view: no
   entities:
     - switch.rolfcomputer
+    - switch.playstation4
 
 apcupsd:
   name: UPS
@@ -50,3 +95,10 @@ apcupsd:
     - sensor.ups_status
     - sensor.ups_battery
     - sensor.ups_time_left
+
+scripts:
+  name: Scripts
+  view: no
+  entities:
+    - script.restart_hass
+    - script.pull_latest_changes

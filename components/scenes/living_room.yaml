@@ -1,0 +1,37 @@
+- name: living_room_on
+  entities:
+    light.lamp_1:
+      state: on
+      brightness: 155
+      rgb_color: [255,183,123]
+      transition: True
+    light.lamp_3:
+      state: on
+      brightness: 155
+      rgb_color: [255,183,123]
+      transition: True
+    light.eettafel:
+      state: on
+      brightness: 155
+      rgb_color: [18,10,3]
+      transition: True
+    switch.plug_158d0001715f48:
+      state: on
+
+- name: evening_plex
+  entities:
+    light.lamp_1:
+      state: on
+      brightness: 2
+      rgb_color: [255,148,43]
+      transition: True
+    light.lamp_3:
+      state: on
+      brightness: 2
+      rgb_color: [255,148,43]
+      transition: True
+    light.eettafel:
+      state: on
+      brightness: 4
+      rgb_color: [42,30,10]
+      transition: True

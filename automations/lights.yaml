@@ -1,0 +1,63 @@
+#
+# General / Lights
+#
+- alias: 'Lights on in the morning on weekdays'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: time
+    at: '06:45:00'
+  condition:
+    condition: and
+    conditions:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: device_tracker.rolf_5t
+      state: 'home'
+  action:
+    service: scene.turn_on
+    entity_id: scene.morning
+
+- alias: 'Lights off in the morning on weekdays'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: time
+    at: '08:45'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    service: scene.turn_on
+    entity_id: scene.all_off
+
+- alias: 'Lights off at night'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: time
+    at: '23:30:00'
+  action:
+    service: scene.turn_on
+    entity_id: scene.all_off
+
+- alias: 'Lights off at sunrise'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: sun
+    event: sunrise
+  action: 
+    service: scene.turn_on
+    entity_id: scene.all_off

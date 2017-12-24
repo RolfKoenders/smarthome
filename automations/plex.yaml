@@ -1,0 +1,31 @@
+- alias: 'Dim lights when plex plays on living room'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: media_player.tv_ue55f8000
+      to: 'playing'
+      from: 'paused'
+    - platform: state
+      entity_id: media_player.tv_ue55f8000
+      to: 'playing'
+      from: 'idle'
+  action:
+    service: scene.turn_on
+    entity_id: scene.evening_plex
+
+- alias: 'When plex is paused turn lights on'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: media_player.tv_ue55f8000
+      to: 'paused'
+      from: 'playing'
+    - platform: state
+      entity_id: media_player.tv_ue55f8000
+      to: 'idle'
+      from: 'playing'
+  action:
+    service: scene.turn_on
+    entity_id: scene.living_room_on

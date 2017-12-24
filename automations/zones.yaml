@@ -1,0 +1,22 @@
+- alias: 'Turn off computer when leave home area'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    platform: zone
+    event: leave
+    zone: zone.home
+    entity_id: device_tracker.rolf_5t
+  condition:
+    condition: state
+    entity_id: switch.rolfcomputer
+    state: 'on'
+  action:
+    - service: shell_command.turn_off_rolf_computer
+      data:
+        user: !secret rolf_computer_user
+        ip: !secret rolf_computer_ip
+        cmd: !secret rolf_computer_cmd
+    - service: notify.pushover
+      data_template:
+        title: 'Turned off computer'
+        message: 'Left home area computer turned off.'

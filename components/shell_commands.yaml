@@ -1,0 +1,3 @@
+turn_off_rolf_computer: 'ssh -i /home/homeassistant/.ssh/hass {{user}}@{{ip}} bash {{cmd}}'
+restart_hass: 'sudo /home/homeassistant/restart_hass'
+pull_latest_changes: '/home/homeassistant/pull_latest_changes'

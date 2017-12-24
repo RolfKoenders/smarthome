@@ -1,7 +1,11 @@
+# Home Automation stuff
+> All the bits and pieces to make my home smart.
 
-# :house: My smarthome stuff
-[![Build Status](https://travis-ci.org/RolfKoenders/smarthome.svg?branch=master)](https://travis-ci.org/RolfKoenders/smarthome)
+What you will find in this repository:
+- [Home Assistant](https://home-assistant.io/) configurtaion files
+- Data that is used / needed for some components
+- Arduino (Micro computer) sketches
 
-My [Home Assistant](https://home-assistant.io/) configuration (yaml) files.
+## Sofwware
 
-_more detailed readme on the way_
+## Hardware

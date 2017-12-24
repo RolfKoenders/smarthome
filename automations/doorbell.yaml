@@ -1,0 +1,34 @@
+- alias: 'Doorbell'
+  trigger:
+    platform: mqtt
+    topic: hass/doorbell
+    payload: ding
+  action:
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: 34:ce:00:85:3d:aa
+        ringtone_id: '10'
+        ringtone_vol: '40'
+    # - service: light.turn_on
+    #   data:
+    #     entity_id: light.lamp_1
+    #     rgb_color: [27,94,209]
+    - service: light.turn_on
+      data:
+        entity_id: light.lamp_2
+        rgb_color: [27,94,209]
+    - delay:
+        seconds: 3
+    # - service: light.turn_on
+    #   data:
+    #     entity_id: light.lamp_1
+    #     rgb_color: [255,183,123]
+    #     brightness: 155
+    - service: light.turn_on
+      data:
+        entity_id: light.lamp_2
+        rgb_color: [255,183,123]
+        brightness: 155
+    - service: xiaomi_aqara.stop_ringtone
+      data:
+        gw_mac: 34:ce:00:85:3d:aa

@@ -1,0 +1,4 @@
+hallway_light_timer:
+    duration: '00:01:05'
+upstairs_hallway_light_timer:
+    duration: '00:01:05'

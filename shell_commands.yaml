@@ -1,1 +1,0 @@
-turn_off_rolf_computer: 'ssh -i /home/homeassistant/.ssh/hass {{user}}@{{ip}} bash {{cmd}}'

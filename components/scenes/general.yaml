@@ -1,0 +1,26 @@
+- name: ground_floor_off
+  entities: 
+    light.lamp_1:
+      state: off
+      transition: True
+    light.lamp_3:
+      state: off
+      transition: True
+    light.eettafel:
+      state: off
+      transition: True
+    light.keuken:
+      state: off
+      transition: True
+    switch.plug_158d0001715f48:
+      state: off
+
+- name: all_off
+  entities:
+    light.lamp_1: off
+    light.lamp_2: off
+    light.lamp_3: off
+    light.overloop: off
+    light.keuken: off
+    light.eettafel: off
+    switch.plug_158d0001715f48: off
