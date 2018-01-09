@@ -6,6 +6,6 @@ What you will find in this repository:
 - Data that is used / needed for some components
 - Arduino (Micro computer) sketches
 
-## Sofwware
+## Software
 
 ## Hardware
