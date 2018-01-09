@@ -92,5 +92,5 @@ automation:
         data_template:
           title: 'Afvalinzameling'
           target: !secret telegram_rolf_id
-          message: 'Vandaag kan de {{ states.sensor.trash_tomorrow.state }} container aan de straat.'
+          message: 'Morgen kan de {{ states.sensor.trash_tomorrow.state }} container aan de straat.'
           disable_notification: false
