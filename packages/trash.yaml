@@ -78,7 +78,7 @@ automation:
     hide_entity: false
     trigger:
       platform: time
-      at: '22:00:00'
+      at: '19:30:00'
     condition:
       - condition: state
         entity_id: input_boolean.notify_trash
