@@ -1,0 +1,12 @@
+- platform: buienradar
+  timeframe: 60
+  monitored_conditions:
+    - symbol
+    - temperature
+    - humidity
+    - irradiance
+    - precipitation
+    - precipitation_forecast_average
+    - windspeed
+    - windforce
+    - winddirection

@@ -3,5 +3,5 @@
     playstation4:
       command_on: 'ps4-waker -t 15'
       command_off: 'ps4-waker standby'
-      command_state: 'nc -z -w 15 192.168.2.66 9295; echo $?'
+      command_state: !secret ps4_command
       value_template: '{{ value ==  "0" }}'

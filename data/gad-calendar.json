@@ -1,8 +1,8 @@
 {
 	"legend": {
-		"P": "Oud Papier, Karton",
-		"PM": "PMD",
-		"G": "GFT-afval",
+		"P": "Papier en karton",
+		"PM": "Plastic en kunstof",
+		"G": "Groente, Fruit en Tuinafval",
 		"R": "Restafval"
 	},
 	"days": {

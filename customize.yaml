@@ -13,10 +13,6 @@ group.all_devices:
   hidden: true
 
 # Switches
-switch.plug_158d0001715f48:
-  friendly_name: Kerstboom
-  emulated_hue: true
-  emulated_hue_name: 'Christmas tree'
 switch.rolfcomputer:
   friendly_name: 'Rolf computer'
   emulated_hue: true

@@ -1,0 +1,10 @@
+
+homeassistant:
+
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+
+camera:
+  - platform: ffmpeg
+    input: !secret cam1
+    name: Woonkamer

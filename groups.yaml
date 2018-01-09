@@ -13,14 +13,22 @@ default_view:
     - group.lampen
     - group.scenes
     - group.wol
+    - camera.woonkamer
+
+weer:
+  name: Weer
+  view: yes
+  icon: mdi:weather-cloudy
+  entities:
+    - group.buienradar
 
 bedroom:
   name: bedroom
   icon: mdi:hotel
   view: yes
   entities:
-    - media_player.mi_box
-    - media_player.spotify
+    # - media_player.mi_box
+    # - media_player.spotify
 
 settings:
   name: settings
@@ -36,6 +44,7 @@ people:
   view: no
   entities:
     - device_tracker.rolf_5t
+    - device_tracker.janine_5p
 
 afvalinzameling:
   name: 'Afvalinzameling'
@@ -43,6 +52,7 @@ afvalinzameling:
   entities:
     - input_boolean.notify_trash
     - sensor.trash_today
+    - sensor.trash_tomorrow
 
 lampen:
   name: 'Lampen'
@@ -52,7 +62,6 @@ lampen:
     - light.lamp_1
     - light.lamp_3
     - light.eettafel
-    - switch.plug_158d0001715f48
     - light.keuken
     - light.lamp_2
     - light.overloop
@@ -68,7 +77,7 @@ scenes:
     - scene.all_off
 
 toon:
-  name: 'Eneco Toon'
+  name: 'Toon'
   view: no
   entities:
     - climate.toon_van_eneco
@@ -102,3 +111,17 @@ scripts:
   entities:
     - script.restart_hass
     - script.pull_latest_changes
+
+buienradar:
+  name: Buienradar
+  view: no
+  entities:
+    - sensor.br_symbol
+    - sensor.br_temperature
+    - sensor.br_humidity
+    - sensor.br_irradiance
+    - sensor.br_precipitation
+    - sensor.br_precipitation_forecast_average
+    - sensor.br_wind_speed
+    - sensor.br_wind_force
+    - sensor.br_wind_direction
