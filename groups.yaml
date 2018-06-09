@@ -44,7 +44,6 @@ people:
   view: no
   entities:
     - device_tracker.rolf_5t
-    - device_tracker.janine_5p
 
 afvalinzameling:
   name: 'Afvalinzameling'
