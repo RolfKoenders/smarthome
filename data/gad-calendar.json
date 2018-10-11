@@ -1,9 +1,9 @@
 {
 	"legend": {
-		"P": "Papier en karton",
-		"PM": "Plastic en kunstof",
-		"G": "Groente, Fruit en Tuinafval",
-		"R": "Restafval"
+		"P": "Paper and cardboard (Blue)",
+		"PM": "Plastic (Orange)",
+		"G": "kitchen and garden waste (Green)",
+		"R": "Residual waste (Gray)"
 	},
 	"days": {
 		"22/12/2017": "G",
